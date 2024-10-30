@@ -1,0 +1,2175 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+:root {
+  --primary-font: "DM Sans", sans-serif;
+  --secundary-font: "Poppins", sans-serif;
+  --terciary-font: "Open Sans", sans-serif;
+
+  --primary-color:  #ebe1d7  ;
+  --secundary-color: #b49d8a;
+
+  --max-width-sections: 960px;
+  --width-sections: 90%;
+
+  --btn-hover-box-shadow: 0px 0px 10px #5d5236;
+
+  --circle-blur-filter: blur(23px);
+  --transition-ease: ease-in-out;
+
+  --nav-hover-color: #f9a508;
+  --nav-hover-before-bg: linear-gradient(to left, #d8a122, #f4a60b, #011e11);
+  --nav-hover-before-transition: width 0.5s ease;
+  --padding-sobre-large: 7em 3em;
+  --padding-beneficios-large: 3.8em 1em;
+  --nav-link-font-size-small-gap-line-heigth: 1.3em;
+  --row-gap-beneficios-large-font-size: 1.4em;
+  --nav-bg-color-small: #011e11;
+  --nav-hover-bg-small: #022817;
+
+  --opacity-hidden: 0;
+  --filter-hidden: blur(5px);
+  --transition-fast: all 0.5s;
+  --transition-slow: all 1s;
+  --transform-hidden-inicio: translateX(-50%);
+  --transform-hidden-default: translateX(50%);
+  --transform-hidden-beneficios: translateY(100%);
+
+  --opacity-show: 1;
+  --filter-show: blur(0);
+  --transform-show: translateX(0);
+  --transform-show-beneficios: translateY(0);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: rgb(10, 10, 10);
+}
+
+/* Estilos do Option */
+
+.groupOption-project {
+  position: fixed;
+  z-index: 9000;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #ecda0ddd;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--primary-font);
+}
+
+.option-project {
+  text-align: center;
+  position: relative;
+  background-color: var(--primary-color);
+  border: 2.5px solid #f99c06;
+  display: flex;
+  flex-direction: column;
+  gap: 1.3em;
+  max-width: 35em;
+  padding: 3em 2em 2em 2em;
+  box-shadow: 0px 0px 10px #f9860c;
+  border-radius: 20px;
+  margin: 2em;
+  animation: effectOption .5s ease 0s 1 normal forwards;
+  align-items: center;
+}
+
+@keyframes effectOption {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.btn-close-option {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 1.6em;
+  color: #f65f07;
+  padding-right: 13px;
+  padding-top: 11px;
+}
+
+.option-project__title {
+  font-size: 2em;
+}
+
+.icon-btn-option {
+  color: #011e11;
+  font-size: 1.1em;s
+}
+
+/* Estilos do nav */
+
+.groupNav {
+  background-color: var(--primary-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 12;
+  width: 100vw;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 98%;
+  max-width: var(--max-width-sections);
+  margin: auto;
+}
+.logo {
+  width: 50px; /* Ajuste o tamanho conforme necessário */
+  height: 50px; /* Deve ser igual à largura para manter a forma de círculo */
+  border-radius: 50%; /* Torna a imagem redonda */
+  object-fit: cover; /* Mantém a proporção da imagem */
+  
+}
+
+.btn-menu {
+  border: none;
+  background-color: transparent;
+  visibility: hidden;
+  color: rgb(205, 141, 84);
+  font-size: 3em;
+  text-align: end;
+}
+
+.nav > ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 1.7em;
+}
+
+.nav > ul a {
+  text-decoration: none;
+  color: rgb(4, 4, 4);
+  font-family: var(--secundary-font);
+  font-size: 0.96em;
+  position: relative;
+  transition: color 0.5s ease;
+}
+
+/* Estilos do Heaader */
+
+.groupHeader {
+  background-color: var(--primary-color);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.groupHeader > .header {
+  width: var(--width-sections);
+  max-width: var(--max-width-sections);
+  margin: auto;
+  min-height: fit-content;
+}
+
+.groupHeader-elements {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: inherit;
+}
+
+.groupHeader-primary {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+/* titulo do turmalina */
+.groupHeader-primary > .titleHeader-primary {
+  font-family: var(--secundary-font);
+  font-weight: 800;
+  color:#6e4c34;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 1em;
+}
+/* titulo do protocolos */
+.groupHeader-primary > .titleHeader-secundary {
+  color: rgb(21, 20, 20);
+  font-family: var(--primary-font);
+  font-size: 2rem;
+  font-weight: 800;
+  width: 8em;
+  letter-spacing: 2px;
+}
+
+.btn {
+  width: 20em;
+  padding: 1.2em;
+  border: none;
+  background-image: linear-gradient(to right, #6e4c34, #ebd80c45);
+  border-radius: 40px;
+  cursor: pointer;
+  transition-property: transform, box-shadow;
+  transition-duration: 0.3s;
+  transition-timing-function: var(--transition-ease);
+  font-size: 1em;
+  text-decoration: none;
+  font-weight: 800;
+  color: white;
+  font-family: var(--secundary-font);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.btn:hover {
+  transform: scale(110%);
+  box-shadow: var(--btn-hover-box-shadow);
+}
+
+.groupHeader-secundary {
+  position: relative;
+  padding: 2em;
+}
+
+.circle {
+  position: absolute;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 22em;
+  max-height: 22em;
+  border-radius: 50%;
+  background-image: linear-gradient(to right, #6e4c34, #ebd80c45);
+  filter: var(--circle-blur-filter);
+  right: 35px;
+  top: 54px;
+  animation: float 3s var(--transition-ease) infinite;
+}
+
+.img {
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  max-width: 20em;
+  height: auto; /* Mantém a proporção da imagem */
+  border-radius: 50%; /* Torna a imagem circular */
+  right: 45px;
+  filter: saturate(100%);
+  animation: float 3s var(--transition-ease) infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@media (max-width: 768px) {
+  .circle {
+    right: 10px; /* Ajuste conforme necessário */
+    top: 20px; /* Ajuste conforme necessário */
+    
+  }
+
+  .img {
+    right: 15px; /* Ajuste conforme necessário */
+    max-width: 80%; /* Aumenta a responsividade da imagem */
+  }
+}
+
+
+
+/* Estilos do Sobre */
+
+.groupSobre {
+  background-color: var(--secundary-color);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 3em 0em;
+}
+/* campo sobre */
+
+.sobre {
+  width: var(--width-sections);
+  max-width: var(--max-width-sections);
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+#sobre {
+  border-bottom: 3px solid #333; /* Linha principal */
+  border-top: 2px solid #777; /* Linha adicional acima */
+  border-radius: 50px; /* Arredonda as pontas das duas bordas */
+  padding-bottom: 100px; /* Espaçamento para ajustar a aparência */
+
+  
+}
+
+.groupSobre-primary {
+  position: relative;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.groupSobre-primary img {
+  position: absolute;
+  width: 54%;
+}
+
+.img-excel {
+  animation: imgExcelFlutuando 8s ease-in-out 0s infinite alternate;
+}
+
+.img-sheets {
+
+    filter: saturate(115%);
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    max-width: 20em;
+    border-radius: 50%; /* Torna a imagem circular */
+    right: 45px;
+    animation: float 3s var(--transition-ease) infinite;
+ 
+  animation: imgSheetsFlutuando 7s ease 0s infinite alternate;
+}
+
+@keyframes imgExcelFlutuando {
+  0% {
+    transform: translateX(-208px);
+    transform: translateY(60px);
+  }
+
+  50% {
+    transform: translateY(0);
+    transform: translateX(-250px);
+  }
+  100% {
+    transform: translateY(200px);
+    transform: translateX(-20px);
+  }
+}
+
+@keyframes imgSheetsFlutuando {
+  0% {
+    transform: translateX(-100px);
+    transform: translateY(-50px);
+  }
+  50% {
+    transform: translateY(-100px);
+    transform: translateX(100px);
+  }
+  100% {
+    transform: translateY(-150px);
+    transform: translateX(50px);
+  }
+}
+
+.groupSobre-secundary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.groupSobre-secundary-texts {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  width: 22em;
+}
+/* titulo do procurar  */
+.titleSobre {
+  font-family: var(--primary-font);
+  font-weight: 900; /* Um pouco mais leve, mas ainda destacado */
+  font-size: 2em; /* Tamanho da fonte */
+  line-height: 1.2; /* Ajuste para um espaçamento mais agradável entre linhas */
+  color: #333; /* Um tom de preto menos intenso para suavizar o visual */
+  text-transform: uppercase; /* Torna todas as letras maiúsculas para um efeito impactante */
+  letter-spacing: 2px; /* Aumenta o espaçamento entre letras para dar um toque de elegância */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra sutil ao texto para destaque */
+}
+.textSobre {
+  font-family: var(--primary-font);
+  font-size: 0.9em;
+  line-height: 28px;
+  color: black;
+}
+
+
+
+
+/* mudando */
+
+.groupServiceExcel {
+  position: relative;
+  background-color: var(--primary-color);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3em 0;
+  overflow: hidden;
+}
+
+
+/* TITULO DO SERVIÇO*/
+.groupServiceExcel-primary > .titleServiceExcel-primary {
+  font-family: var(--primary-font);
+  text-align: center;
+  font-size: 2em; /* Tamanho da fonte */
+  color: var(--secundary-color); /* Cor do texto */
+  margin-top: 0.8rem; /* Margem superior */
+  font-weight: 700; /* Adiciona um peso maior ao texto */
+  line-height: 1.3; /* Melhora o espaçamento entre linhas */
+  text-transform: capitalize; /* Torna a primeira letra de cada palavra maiúscula */
+  letter-spacing: 1px; /* Aumenta o espaçamento entre letras */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Sombra sutil para destaque */
+  transition: color 0.3s ease; /* Efeito suave de transição para mudanças de cor */
+}
+
+.groupServiceExcel-primary > .titleServiceExcel-primary:hover {
+  color: var(--highlight-color); /* Cor de destaque ao passar o mouse */
+}
+
+.section {
+  background-color: #ffffff; /* Fundo branco para as seções */
+  border: 1px solid #dcdcdc; /* Borda leve */
+  border-radius: 10px; /* Bordas arredondadas */
+  padding: 30px; /* Espaçamento interno */
+  margin-bottom: 30px; /* Espaçamento entre as seções */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra mais pronunciada */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transições suaves */
+}
+
+h2.titleServiceExcel-primary {
+  font-size: 5em; /* Tamanho da fonte para o título */
+}
+
+h2  {
+  font-size: 1.6em; /* Tamanho da fonte para o título */
+  color: var(--secundary-color, #6e4c34); /* Cor personalizada para o título */
+  margin: 0 0 15px; /* Margem inferior */
+  text-align: center; /* Centraliza o título */
+  text-transform: uppercase; /* Título em letras maiúsculas para destaque */
+}
+
+h3 {
+  font-size: 1.6em; /* Tamanho da fonte para o subtítulo */
+  color: #34495e; /* Cor do subtítulo */
+  margin: 15px 0; /* Margem superior e inferior */
+  text-align: center; /* Centraliza o subtítulo */
+}
+
+ul {
+  list-style-type: none; /* Remove os marcadores padrão da lista */
+  padding: 0; /* Remove o preenchimento padrão */
+}
+
+.estetica-item {
+  background-color: #ecf0f1; /* Cor de fundo para os itens da lista */
+  border-radius: 5px; /* Bordas arredondadas */
+  padding: 15px; /* Espaçamento interno */
+  margin: 10px 0; /* Espaçamento entre os itens */
+  transition: background-color 0.3s ease; /* Transição suave para a cor de fundo */
+  font-size: 1.2em; /* Tamanho da fonte dos itens da lista */
+}
+
+.estetica-item:hover {
+  background-color: var(--highlight-color, #bb9534); /* Cor de destaque ao passar o mouse */
+  color: #ffffff; /* Cor do texto ao passar o mouse */
+}
+
+
+
+.btn-ver-mais-projetos {
+  background-color: var(--primary-color);
+  border: 2px solid #fc9e07;
+  color: #e84809;
+  font-family: var(--primary-font);
+  font-weight: bolder;
+  font-size: 1.1em;
+  width: 14em;
+  height: 3.5em;
+  border-radius: 30px;
+  bottom: 0;
+  margin: 1em;
+  cursor: pointer;
+  padding: 1em;
+  transition: all 0.2s ease;
+}
+
+.btn-ver-mais-projetos:hover {
+  transform: scale(105%);
+}
+
+/* Estilos do YouTube */
+
+.groupYouTube {
+  background-color: var(--secundary-color);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 3em 0em;
+}
+
+.youtube {
+  display: grid;
+  width: var(--width-sections);
+  margin: auto;
+  max-width: var(--max-width-sections);
+  grid-template-columns: 25em 1fr;
+  grid-template-rows: 4fr 1fr;
+}
+
+#youtube {
+  border-bottom: 3px solid #333; /* Linha principal */
+  border-top: 2px solid #777; /* Linha adicional acima */
+  border-radius: 50px; /* Arredonda as pontas das duas bordas */
+  padding-bottom: 100px; /* Espaçamento para ajustar a aparência */
+  
+}
+
+.groupYouTube-primary {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  
+}
+
+.groupTouTube-texts {
+  display: flex;
+  flex-direction: column;
+  gap: 4em;
+  padding: 1em;
+}
+
+strong {
+  font-weight: bold; /* Mantém o texto em negrito */
+  color: #3b3939; /* Cor do texto */
+  font-size: 1em; /* Aumenta o tamanho da fonte */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Adiciona sombra ao texto */
+  transition: color 0.3s ease; /* Adiciona uma transição suave na cor */
+}
+
+/* Efeito ao passar o mouse */
+strong:hover {
+  color: #f1faee; /* Muda a cor ao passar o mouse */
+}
+
+.titleContato {
+  font-family: var(--primary-font);
+  font-size: 2.9em;
+  font-weight: 600;
+  color: var(--primary-color);
+  letter-spacing: 2px;
+}
+
+.textYoutube {
+  font-family: var(--secundary-font);
+  font-weight: bolder;
+  font-size: 1.3em;
+  line-height: 1.5em;
+  color: var(--primary-color);
+}
+
+.groupYouTube-secundary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+}
+
+.btnYoutube {
+  background-color: var(--primary-color);
+  border: 2px solid #fc9e07;
+  color: #e84809;
+  font-family: var(--primary-font);
+  font-weight: bolder;
+  font-size: 1.1em;
+  width: 14em;
+  height: 3.5em;
+  border-radius: 30px;
+  bottom: 0;
+  margin: 1em;
+  cursor: pointer;
+  padding: 1em;
+  transition: all 0.2s ease;
+}
+
+.btnYoutube:hover {
+  transform: scale(110%);
+  box-shadow: var(--btn-hover-box-shadow);
+}
+
+.groupYouTube-terciary {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  grid-column: 2 / -1;
+}
+
+/* Estilos Benefícios */
+
+.groupBeneficios {
+  background-color: white;
+  color: black;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 3em 0em;
+}
+
+.beneficios {
+  width: var(--width-sections);
+  max-width: var(--max-width-sections);
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 8em 1fr;
+  padding: 2em 1em;
+  font-size: 1rem;
+}
+
+.groupBeneficios-primary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.title-beneficios {
+  font-family: var(--primary-font);
+  font-size: 2em;
+  letter-spacing: 1.8px;
+}
+
+.groupBeneficios-secundary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  gap: 1em;
+  padding: 0em 2em;
+  padding-bottom: 2em;
+}
+
+.beneficio-item {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  align-items: center;
+  align-items: center;
+}
+
+.beneficio-item-circle-externo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 11em;
+  height: 11em;
+  border-radius: 50%;
+  background-image: linear-gradient(to right, #6e4c34, #ebd80c45);
+}
+
+.beneficio-item-circle-interno {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10em;
+  height: 10em;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.icons-beneficios {
+  width: 6em;
+  height: 6em;
+}
+
+.beneficio-item-title {
+  font-family: var(--secundary-font);
+  width: 9em;
+  text-align: center;
+}
+
+.beneficio-item-text {
+  font-family: var(--primary-font);
+  text-align: center;
+}
+
+/* Estilos das Duvidas */
+
+.groupDuvidas {
+  background-color: var(--secundary-color);
+  color: black;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 3em 0em;
+}
+
+.duvidas {
+  width: var(--width-sections);
+  max-width: var(--max-width-sections);
+  margin: auto;
+  min-height: fit-content;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 7em 6fr;
+  padding-bottom: 2em;
+}
+
+#duvidas{
+  border-bottom: 3px solid #333; /* Linha principal */
+  border-top: 2px solid #777; /* Linha adicional acima */
+  border-radius: 50px; /* Arredonda as pontas das duas bordas */
+  padding-bottom: 100px; /* Espaçamento para ajustar a aparência */
+}
+
+.groupDuvidas-primary {
+  display: flex;
+  align-items: center;
+  padding: 0 1em 0 0.5em;
+  font-size: 2em;
+}
+
+.groupDuvidas-pergunta {
+  font-family: var(--secundary-font);
+  font-weight: bolder;
+  font-size: 1.4em;
+  padding: 0.7em 1em;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.groupDuvidas-pergunta:focus {
+  outline: none;
+}
+
+.groupDuvidas-title {
+  font-family: var(--primary-font);
+  color: black;
+  font-size: 1.2em;
+}
+
+.groupDuvidas-respostas {
+  font-family: var(--secundary-font);
+  padding: 1em 3em;
+  font-size: 1.1em;
+  line-height: 1.6em;
+  color: rgb(27, 27, 27);
+}
+
+/* Estilos do Contato */
+
+.groupContato {
+  background-color: var(--primary-color);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 3em 0em;
+}
+
+.contato {
+  width: var(--width-sections);
+  max-width: var(--max-width-sections);
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.groupContato-primary {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1em;
+  gap: 3em;
+}
+
+.groupContato-texts-top {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  width: 35em;
+}
+
+.groupContato-title {
+  font-family: var(--primary-font);
+  color: var(--secundary-color);
+  font-size: 3em;
+}
+
+.groupContato-legend {
+  font-family: var(--primary-font);
+  color: var(--secundary-color);
+}
+
+.groupContato-button {
+  background-color: var(--secundary-color);
+  border: none;
+  width: 11.5em;
+  padding: 0.7em;
+  border-radius: 30px;
+  transition-property: transform, box-shadow;
+  transition-duration: 0.3s;
+  transition-timing-function: var(--transition-ease);
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: var(--secundary-font);
+  font-weight: 800;
+  font-size: 1em;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+.groupContato-button:hover {
+  transform: scale(105%);
+  box-shadow: #333;
+}
+
+.groupContato-texts-bottom {
+  display: flex;
+  flex-direction: column;
+  width: 35em;
+}
+
+.groupContato-texts-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5em;
+}
+
+.selectContato {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.legend-contato {
+  color: var(--secundary-color);
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 1.1em;
+  font-family: var(--primary-font);
+}
+
+.contato-link {
+  color: rgb(13, 12, 12);
+  text-decoration: none;
+  font-size: 1em;
+  font-family: var(--primary-font);
+  transition: color 0.5s ease;
+}
+
+.contato-link:hover {
+  color: #f0a309;
+}
+
+.groupContato-select-redes-sociais {
+  display: flex;
+  gap: 1em;
+}
+
+.link-contato-icon {
+  font-size: 1.5em;
+}
+
+.groupContato-secundary {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-contato {
+  object-position: center;
+  filter: saturate(140%);
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  max-width: 20em;
+  min-width: 18em;
+  border-radius: 50%; /* Transforma em círculo */
+  
+  animation: float 3s var(--transition-ease) infinite;
+}
+
+
+.circle-img-contato {
+  position: absolute;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 22em;
+  max-height: 22em;
+  border-radius: 50%;
+  background-image: linear-gradient(to right, #6e4c34, #ebd80c45);
+  filter: var(--circle-blur-filter);
+  right: 35px;
+  top: 54px;
+  animation: float 3s var(--transition-ease) infinite;
+}
+
+
+  
+
+
+
+/* Estilos Footer */
+
+.groupFooter {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: black;
+}
+
+.footer {
+  padding: 1em;
+  width: var(--width-sections);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-footer {
+  font-family: var(--primary-font);
+  color: var(--secundary-color);
+  letter-spacing: 1px;
+  font-size: 1.2em;
+  text-decoration: none;
+}
+
+/* Estilos Media querys */
+
+@media screen and (min-width: 899px) {
+  .nav > ul a:hover {
+    color: var(--nav-hover-color);
+  }
+
+  .nav > ul a::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    height: 2px;
+    width: 0px;
+    top: 25px;
+    left: 0px;
+    border-radius: 20px;
+    background-image: var(--nav-hover-before-bg);
+    transition: var(--nav-hover-before-transition);
+  }
+
+  .nav > ul a:hover:before {
+    width: 100%;
+  }
+
+  .beneficios {
+    row-gap: var(--row-gap-beneficios-large-font-size);
+  }
+}
+
+@media screen and (max-width: 997px) {
+  .data {
+    height: 278px;
+  }
+}
+
+@media screen and (max-width: 956px) {
+  .data {
+    height: 266px;
+  }
+}
+
+@media screen and (max-width: 949px) {
+  .data {
+    height: 274px;
+  }
+}
+
+@media screen and (max-width: 922px) {
+  .data {
+    height: 269px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  /* Media do Nav */
+  .nav {
+    padding: 0 1em;
+  }
+
+  .nav > ul {
+    visibility: hidden;
+    display: flex;
+    position: absolute;
+    background-color: var(--nav-bg-color-small);
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+  }
+
+  .nav > ul > li {
+    width: 80%;
+    text-align: center;
+    padding: 1em;
+  }
+
+  .nav > ul > li:hover {
+    background-color: var(--nav-hover-bg-small);
+  }
+
+  .nav > ul a {
+    font-size: var(--nav-link-font-size-small-gap-line-heigth);
+  }
+
+  .btn-menu {
+    visibility: visible;
+    z-index: 11;
+    font-size: 2.3em;
+  }
+
+  /* Media do Header */
+
+  .groupHeader-elements {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    padding-bottom: 1em;
+    padding-top: 6em;
+  }
+
+  .groupHeader-primary {
+    align-items: center;
+    padding: 2em;
+    gap: 3rem;
+    padding-bottom: 3em;
+  }
+
+  .groupHeader-primary > .titleHeader-secundary {
+    text-align: center;
+    
+    
+  }
+
+  .groupHeader-secundary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+  }
+
+  .circle {
+    
+  }
+  .img {
+    position: static;
+  }
+
+  /* Media Sobre */
+
+  .sobre {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    padding: 5em;
+  }
+
+  .h2 {
+    padding: 5em;
+  }
+
+  .textSobre {
+    text-align: center;
+  }
+
+  .titleSobre {
+    text-align: center;
+  }
+
+  .groupSobre-primary {
+    display: none;
+  }
+
+  .groupSobre-primary img {
+    max-width: 22em;
+    max-height: 20em;
+  }
+
+  /* Media do Excel */
+
+  .groupServiceExcel-secundary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .data {
+    max-width: none;
+    width: 21em;
+    height: 315px;
+  }
+
+  .youtube {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 20em 5em;
+    width: 80%;
+    justify-content: center;
+  }
+
+  .groupYouTube-primary {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    align-items: center;
+    
+    
+  }
+
+  .groupYouTube-secundary {
+    grid-column: 1 / -1;
+    
+  }
+
+  .groupYouTube-terciary {
+    grid-column: 1 / -1;
+  }
+
+  .groupTouTube-texts {
+    gap: 3em;
+  }
+
+  .titleContato {
+    text-align: center;
+    
+  }
+
+  .textYoutube {
+    text-align: center;
+  }
+
+  /* Media Beneficios */
+
+  .groupBeneficios-secundary {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+
+  .beneficio-item {
+    margin: auto;
+    width: 60%;
+  }
+
+  .groupBeneficios-primary {
+    text-align: center;
+  }
+
+  /* Media do Contato */
+
+  .contato {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    padding: 2em 0;
+  }
+
+  .groupContato-primary {
+    text-align: center;
+    gap: 3em;
+  }
+
+  .groupContato-texts-top {
+    width: 100%;
+  }
+
+  .groupContato-texts-bottom {
+    width: 100%;
+  }
+
+  .groupContato-button {
+    margin: auto;
+  }
+
+  .groupContato-select-redes-sociais {
+    margin: auto;
+  }
+
+  .link-contato-icon {
+    font-size: 2em;
+  }
+}
+
+@media screen and (max-width: 846px) {
+  .nav > ul a {
+    font-size: var(--nav-link-font-size-small-gap-line-heigth);
+  }
+
+  /* .data {
+    height: 14em;
+  } */
+
+  .groupServiceGoogle {
+    background-color: var(--primary-color);
+  }
+
+  /* .service-excel {
+    grid-template-rows: 5em 7em 1fr;
+  } */
+
+  .beneficios {
+    padding: 6em 1em;
+    row-gap: 2em;
+  }
+
+  .contato {
+    padding: 2em 0em;
+  }
+}
+
+@media screen and (max-width: 833px) {
+  .data {
+    width: 19em;
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 773px) {
+  .data {
+    width: 18em;
+    height: 291px;
+  }
+}
+
+@media screen and (max-width: 738px) {
+  .data {
+    width: 16em;
+    height: 276px;
+  }
+}
+
+@media screen and (max-width: 678px) {
+  .groupDuvidas-title {
+    font-size: var(--row-gap-beneficios-large-font-size);
+    padding: 0 0.5em;
+  }
+
+  .groupDuvidas-primary {
+    padding: 0;
+  }
+
+  .duvidas {
+    row-gap: 1em;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .groupServiceExcel-secundary {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .data {
+    width: 22em;
+    height: 324px;
+  }
+
+  .groupServiceExcel-secundary {
+    height: 75em;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .groupNav {
+    padding-top: 0.5em;
+  }
+  /* Estilos Header */
+
+  .groupHeader > .header {
+    padding-bottom: 0em;
+  }
+
+  .btn {
+    width: 16em;
+  }
+
+  .groupHeader-primary > .titleHeader-primary {
+    font-size: 1.2em;
+  }
+
+  .groupSobre {
+    padding: 0em 0em;
+  }
+
+  .groupHeader-primary > .titleHeader-secundary {
+    font-size: 2.6rem;
+    width: 9em;
+  }
+
+  .groupHeader-primary > .btn {
+    width: 16em;
+    font-size: 1.1em;
+  }
+
+  .circle {
+    max-width: 17em;
+    max-height: 17em;
+  }
+
+  .img {
+    width: 100%;
+    max-width: 16em;
+  }
+
+  /* Estilos do Sobre */
+
+  .sobre {
+    grid-template-rows: 21em 1fr;
+    padding: 0;
+    padding-bottom: 0;
+  }
+
+  .groupSobre-primary img {
+    max-width: 19em;
+    max-height: 20em;
+  }
+
+  .titleSobre {
+    font-size: 43px;
+    line-height: 48px;
+  }
+
+  .textSobre {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .groupSobre-secundary-texts {
+    gap: 2rem;
+    width: 24em;
+  }
+  /* Estilos YouTube */
+
+  .youtube {
+    padding-top: 1em 0;
+    width: 100%;
+    max-width: 26em;
+    grid-template-rows: 1fr 17em 5em;
+  }
+
+  .groupTouTube-texts {
+    gap: 2em;
+    width: 26em;
+  }
+
+  .titleContato {
+    font-size: 2.5em;
+    letter-spacing: 0px;
+    line-height: 1em;
+  }
+
+  .textYoutube {
+    font-size: 1.2em;
+    line-height: var(--nav-link-font-size-small-gap-line-heigth);
+  }
+
+  .btnYoutube {
+    width: 16em;
+    height: 3.7em;
+    font-size: 1em;
+  }
+
+  /* Estilos Beneficios */
+
+  .beneficios {
+    width: 90%;
+    max-width: 26em;
+    row-gap: 1em;
+    padding-top: 1em;
+  }
+
+  .title-beneficios {
+    font-size: 2.5em;
+    letter-spacing: 0px;
+  }
+
+  .groupBeneficios-secundary {
+    padding: 0em 0em;
+    padding-bottom: 1em;
+    gap: 2em;
+  }
+
+  .beneficio-item {
+    gap: 0.8em;
+  }
+
+  .beneficio-item-circle-externo {
+    width: 12em;
+    height: 12em;
+  }
+
+  .beneficio-item-circle-interno {
+    width: 11em;
+    height: 11em;
+  }
+
+  .icons-beneficios {
+    width: 6em;
+    height: 6em;
+  }
+
+  .beneficio-item-title {
+    font-size: 1.3em;
+  }
+
+  .beneficio-item-text {
+    font-size: 1em;
+  }
+
+  /* Estilos Duvidas */
+
+  .groupDuvidas-title {
+    font-size: 1.2em;
+    padding: 0 0.5em;
+  }
+
+  .groupDuvidas-primary {
+    padding: 0;
+  }
+
+  .duvidas {
+    padding: 0;
+    row-gap: 1em;
+    grid-template-rows: 4em 6fr;
+  }
+
+  .groupDuvidas-pergunta {
+    font-size: 1.2em;
+  }
+
+  .groupDuvidas-respostas {
+    font-size: 1.2em;
+  }
+
+  /* Estilos Contao */
+
+  .contato {
+    padding: 0;
+  }
+
+  .groupContato-primary {
+    gap: 3em;
+    padding: 0;
+  }
+
+  .groupContato-title {
+    font-size: 2.6em;
+  }
+
+  .groupContato-legend {
+    font-size: 1em;
+  }
+
+  .groupContato-button {
+    font-weight: 800;
+    width: 11em;
+    font-size: 1em;
+    letter-spacing: 0px;
+  }
+
+  .groupContato-texts-bottom {
+    gap: 1.9em;
+  }
+
+  .legend-contato {
+    font-size: 1.2em;
+  }
+
+  .contato-link {
+    font-size: 1em;
+  }
+
+  .image-contato {
+    max-width: 12em;
+    min-width: 16em;
+  }
+
+  .circle-img-contato {
+    max-width: 20em;
+    max-height: 23em;
+  }
+
+  .link-contato-icon {
+    font-size: 1.7em;
+  }
+}
+
+@media screen and (max-width: 466px) {
+  /* Estilos Nav */
+
+  /* Estilos do Header */
+  .nav > ul a {
+    font-size: var(--nav-link-font-size-small-gap-line-heigth);
+  }
+
+  .groupHeader-primary > .titleHeader-primary {
+    font-size: 1em;
+  }
+
+  .groupHeader-primary {
+    gap: 2.5rem;
+  }
+
+  .groupHeader-primary > .titleHeader-secundary {
+    font-size: 2.3rem;
+  }
+
+  .groupHeader-elements {
+    grid-template-rows: 1fr 19em;
+    padding: 6em 0 3em 0;
+  }
+
+  .groupHeader-primary > .btn {
+    width: 15em;
+    font-size: 1em;
+  }
+
+  .img {
+    max-width: 14em;
+  }
+
+  .circle {
+    max-width: 17em;
+    max-height: 17em;
+  }
+
+  /* Estilos Sobre */
+
+  .sobre {
+    grid-template-rows: 17em 1fr;
+    padding: 1em 0em;
+    padding-bottom: 3em;
+  }
+
+  .groupSobre-secundary-texts {
+    width: 97%;
+  }
+
+  .groupSobre-primary img {
+    max-width: 16em;
+    max-height: 15em;
+  }
+
+  /* Estilos Excel */
+
+  .groupServiceExcel-primary > .titleServiceExcel-primary {
+    font-size: 2.1em;
+  }
+
+  .titleService-secundary {
+    font-size: 1.8em;
+  }
+
+  /* .data {
+    row-gap: 0.5em;
+    column-gap: 0em;
+    width: 18em;
+  } */
+
+  .data-descricao {
+    font-size: 1.1em;
+  }
+
+  /* Estilos YouTube */
+
+  .youtube {
+    padding: 4em 0em;
+    grid-template-rows: 1fr 17em 5em;
+  }
+
+  .titleContato {
+    font-size: 2.3em;
+  }
+
+  .textYoutube {
+    font-size: 1.1em;
+    line-height: var(--nav-link-font-size-small-gap-line-heigth);
+  }
+
+  .groupTouTube-texts {
+    gap: var(--nav-link-font-size-small-gap-line-heigth);
+    width: 23em;
+  }
+
+  .btnYoutube {
+    width: 14em;
+    height: 3.5em;
+    font-size: 1em;
+  }
+
+  /* Estilo do Beneficios */
+
+  .beneficios {
+    grid-template-rows: 6em 1fr;
+    padding: 4em 0em;
+  }
+
+  .beneficio-item-circle-externo {
+    width: 9em;
+    height: 9em;
+  }
+
+  .title-beneficios {
+    font-size: 2.3em;
+    line-height: 1.1em;
+  }
+
+  .beneficio-item-circle-externo {
+    width: 12em;
+    height: 12em;
+  }
+  .beneficio-item-circle-interno {
+    width: 11em;
+    height: 11em;
+  }
+
+  .icons-beneficios {
+    width: 6em;
+    height: 6em;
+  }
+
+  .beneficio-item-title {
+    font-size: 1.3em;
+    line-height: 1em;
+  }
+
+  .beneficio-item-text {
+    font-size: 1.1em;
+  }
+
+  /* Estilos das Dúvidas */
+  .duvidas {
+    padding: 2.5em 0em 0em 0em;
+  }
+
+  .groupDuvidas-title {
+    font-size: 1em;
+    font-weight: bolder;
+  }
+
+  .groupDuvidas-pergunta {
+    font-size: 1.2em;
+  }
+
+  .groupDuvidas-respostas {
+    font-size: 1em;
+  }
+
+  /* Estilos de Contatos */
+
+  .contato {
+    padding: 0;
+    padding-top: 4em;
+  }
+
+  .groupContato-primary {
+    padding: 0em 0em;
+  }
+
+  .groupContato-texts-top {
+    gap: 0.8em;
+  }
+
+  .groupContato-title {
+    font-size: 2.2em;
+  }
+
+  .groupContato-legend {
+    font-size: 1em;
+  }
+
+  .groupContato-button {
+    width: 10em;
+    font-size: 1em;
+  }
+
+  .groupContato-primary {
+    gap: 3em;
+  }
+
+  .legend-contato {
+    font-size: 1em;
+  }
+
+  .contato-link {
+    font-size: 1em;
+  }
+
+  .selectContato {
+    gap: 0.5em;
+  }
+
+  .groupContato-texts-bottom {
+    gap: var(--nav-link-font-size-small-gap-line-heigth);
+  }
+
+  .circle-img-contato {
+    max-width: 16em;
+    max-height: 16em;
+  }
+
+  .image-contato {
+    max-width: 10em;
+    min-width: 12em;
+  }
+
+  .link-contato-icon {
+    font-size: var(--nav-link-font-size-small-gap-line-heigth);
+  }
+
+  /* Estilos do Footer */
+
+  .text-footer {
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .option-project {
+    align-items: center;
+    text-align: center;
+  }
+
+  .option-project__title {
+    font-size: 1.5em;
+  }
+
+  .option-project__description {
+    font-size: 1.15em;
+  }
+
+  .option-project__group-btn {
+    flex-direction: column;
+  }
+
+  .option-project__group-btn {
+    margin-top: 0.5em;
+    display: flex;
+    gap: 0.7em;
+  }
+
+  .option-project {
+    gap: 1em;
+  }
+}
+
+@media screen and (max-width: 446px) {
+  .data {
+    width: 20em;
+    height: 308px;
+  }
+}
+
+
+@media screen and (max-width: 418px) {
+  /* Estilos Header */
+
+  .btn {
+    width: 14em;
+  }
+
+  .groupHeader-primary {
+    gap: 2rem;
+    padding: 2em 0em 5em 0em;
+  }
+
+  .groupHeader-elements {
+    grid-template-rows: 1fr 17em;
+    padding-bottom: 2.5em;
+  }
+
+  .groupHeader-primary > .titleHeader-primary {
+    font-size: 1em;
+  }
+
+  .groupHeader-primary > .titleHeader-secundary {
+    font-size: 2.2rem;
+    width: 10em;
+  }
+
+  .groupHeader-primary > .btn {
+    width: 13em;
+    font-size: 1em;
+  }
+
+  .circle {
+    max-width: 14em;
+    max-height: 14em;
+  }
+
+  .img {
+    max-width: 13em;
+  }
+
+  /* Estilos do Sobre */
+
+  .groupSobre-primary img {
+    max-width: 15em; /* Define a largura máxima da imagem para 15em, evitando que ela ultrapasse esse tamanho */
+    max-height: 15em; /* Define a altura máxima da imagem para 20em, evitando que ela ultrapasse esse tamanho */
+}
+
+.titleSobre {
+    font-size: 1.6rem; /* Define o tamanho da fonte como 1.6rem, garantindo que o texto seja legível */
+    line-height: 30px; /* Define a altura da linha como 30px, controlando o espaçamento vertical entre as linhas de texto */
+    
+  }
+
+
+  .groupSobre-secundary-texts {
+    gap: 3rem; /* Espaçamento entre os itens */
+    width: 100%; /* Largura flexível para responsividade */
+    max-width: 20rem; /* Limita a largura máxima */
+    margin-bottom: 1rem;
+    padding: 1rem; /* Adiciona espaçamento interno */
+    
+    
+    display: flex;
+    flex-direction: column; /* Organiza os itens em coluna */
+    align-items: center; /* Centraliza os itens verticalmente */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    
+    text-align: center; /* Centraliza o texto dentro dos itens */
+}
+
+  /* Estilos Excel */
+
+  .groupServiceExcel-primary > .titleServiceExcel-primary {
+    font-size: 1.8em;
+  }
+
+  /* Estilos YouTube */
+  .titleContato {
+    font-size: 2em;
+  }
+
+  .textYoutube {
+    font-size: 1em;
+    line-height: var(--nav-link-font-size-small-gap-line-heigth);
+  }
+
+  .btnYoutube {
+    width: 14em;
+    height: 3.5em;
+    font-size: 1em;
+  }
+
+  /* Estilos Beneficios */
+
+  .beneficios {
+    row-gap: 2em;
+  }
+
+  .groupBeneficios-secundary {
+    gap: 2em;
+  }
+
+  .title-beneficios {
+    font-size: 2em;
+  }
+
+  .beneficio-item {
+    width: 86%;
+  }
+
+  .beneficio-item-title {
+    font-size: 1.1em;
+  }
+
+  .beneficio-item-text {
+    font-size: 1em;
+  }
+
+  .icons-beneficios {
+    width: 3.6em;
+    height: 3.6em;
+  }
+
+  .beneficio-item-circle-interno {
+    width: 7em;
+    height: 7em;
+  }
+
+  .beneficio-item-circle-externo {
+    width: 8em;
+    height: 8em;
+  }
+
+  /* Estilos Duvidas */
+
+  .groupDuvidas-title {
+    font-size: 0.93em;
+  }
+
+  /* Estilos Contato */
+
+  .groupContato-title {
+    font-size: 2em;
+  }
+
+  .groupContato-legend {
+    font-size: 1em;
+  }
+  .legend-contato {
+    font-size: 1em;
+  }
+
+  .contato-link {
+    font-size: 1em;
+  }
+  .circle-img-contato {
+    max-width: 12em;
+    max-height: 13em;
+  }
+
+  .image-contato {
+    max-width: 8em;
+    min-width: 12em;
+  }
+
+  .link-contato-icon {
+    font-size: var(--nav-link-font-size-small-gap-line-heigth);
+  }
+
+  /* Estilos Footer */
+
+  .text-footer {
+    font-size: 0.85em;
+  }
+}
+
+@media screen and (max-width: 402px) {
+  .groupServiceExcel-secundary {
+    padding: 0;
+  }
+  .data {
+    width: 18em;
+    height: 292px;
+}
+}
+
+@media screen and (max-width: 383px) {
+  /* .data {
+    height: 246px;
+  } */
+}
+
+@media screen and (max-width: 378px) {
+  /* Estilos Header */
+
+  .btn {
+    width: 14em;
+  }
+
+  .nav > ul a {
+    font-size: var(--nav-link-font-size-small-gap-line-heigth);
+  }
+
+  .groupHeader-primary {
+    gap: 2rem;
+    padding: 2em 0em 5em 0em;
+  }
+
+  .groupHeader-elements {
+    grid-template-rows: 1fr 17em;
+    padding-bottom: 2.5em;
+  }
+
+  .groupHeader-primary > .titleHeader-primary {
+    font-size: 1em;
+  }
+
+  .groupHeader-primary > .titleHeader-secundary {
+    font-size: 2rem;
+    width: 10em;
+  }
+
+  .groupHeader-primary > .btn {
+    width: 13em;
+    font-size: 1em;
+  }
+
+  .circle {
+    max-width: 14em;
+    max-height: 14em;
+  }
+
+  .img {
+    max-width: 13em;
+  }
+
+  /* Estilos Excel */
+
+  .groupServiceExcel-primary > .titleServiceExcel-primary {
+    font-size: 1.8em;
+  }
+
+  .titleService-secundary {
+    font-size: var(--nav-link-font-size-small-gap-line-heigth);
+    font-size: 1.65em;
+  }
+
+  /* Estilos YouTube */
+  .groupTouTube-texts {
+    width: 18em;
+  }
+
+  .groupDuvidas-title {
+    font-size: 0.86em;
+    font-weight: bolder;
+  }
+}
+
+@media screen and (max-width: 362px) {
+  .data {
+    width: 16em;
+    height: 277px;
+}
+}
+
+@media screen and (max-width: 338px) {
+  .groupHeader-primary > .titleHeader-secundary {
+    font-size: 1.7rem;
+    width: auto;
+  }
+}
+
+/* Efeito Inicio */
+.hidden-inicio {
+  opacity: var(--opacity-hidden);
+  filter: var(--filter-hidden);
+  transition: var(--transition-fast);
+  transform: var(--transform-hidden-inicio);
+}
+
+.show-inicio {
+  opacity: var(--opacity-show);
+  filter: var(--filter-show);
+  transform: var(--transform-show);
+  transition: var(--transition-slow);
+}
+
+/* Efeito Sobre */
+.hidden-sobre {
+  opacity: var(--opacity-hidden);
+  filter: var(--filter-hidden);
+  transition: var(--transition-slow);
+  transform: var(--transform-hidden-default);
+}
+
+.show-sobre {
+  opacity: var(--opacity-show);
+  filter: var(--filter-show);
+  transform: var(--transform-show);
+  transition: var(--transition-slow);
+}
+
+/* Efeito YouTube */
+.hidden-youtube {
+  opacity: var(--opacity-hidden);
+  filter: var(--filter-hidden);
+  transition: var(--transition-slow);
+  transform: var(--transform-hidden-default);
+}
+
+.show-youtube {
+  opacity: var(--opacity-show);
+  filter: var(--filter-show);
+  transform: var(--transform-show);
+  transition: var(--transition-slow);
+}
+
+.hidden-youtube-video {
+  opacity: var(--opacity-hidden);
+  filter: var(--filter-hidden);
+  transform: translate(2%);
+  transition: var(--transition-slow);
+}
+
+.show-youtube-video {
+  opacity: var(--opacity-show);
+  filter: var(--filter-show);
+  transform: translate(0);
+  transition: var(--transition-slow);
+}
+
+/* Efeito Beneficios */
+.hidden-beneficios {
+  opacity: var(--opacity-hidden);
+  filter: var(--filter-hidden);
+  transition: var(--transition-slow);
+  transform: var(--transform-hidden-beneficios);
+}
+
+.show-beneficios {
+  opacity: var(--opacity-show);
+  filter: var(--filter-show);
+  transition: var(--transition-slow);
+  transform: var(--transform-show-beneficios);
+}
+
+.hidden-inicio-img {
+  right: 50%;
+  transition: right 1s ease;
+  opacity: 0;
+}
+
+.show-inicio-img {
+  right: 45px;
+  transition: right 1s ease;
+  opacity: 1;
+}
+
+@media (max-height: 600px) and (max-width: 320px) {
+  .sobre {
+    padding: 13em 0em;
+    padding-bottom: 13em;
+  }
+}
