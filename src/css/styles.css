@@ -27,7 +27,7 @@
   --padding-beneficios-large: 3.8em 1em;
   --nav-link-font-size-small-gap-line-heigth: 1.3em;
   --row-gap-beneficios-large-font-size: 1.4em;
-  --nav-bg-color-small: #011e11;
+  --nav-bg-color-small: #ebe1d7;
   --nav-hover-bg-small: #022817;
 
   --opacity-hidden: 0;
@@ -163,7 +163,7 @@ body {
 
 .nav > ul a {
   text-decoration: none;
-  color: rgb(4, 4, 4);
+  color: rgb(11, 11, 11);
   font-family: var(--secundary-font);
   font-size: 0.96em;
   position: relative;
